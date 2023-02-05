@@ -63,3 +63,25 @@ sumRange(3); // 6
                                 return 2 + sumRange(1)
                                                     return 1
 */
+
+function factorial(num) {
+  if (num === 2) return 2;
+  return num * factorial(num - 1);
+}
+
+factorial(5); // 120
+
+/* 
+Where things go wrong
+    No base case
+    Forgetting to return or returning the wrong thing!
+    Stack overflow! 
+*/
+function factorial(num) {
+  if (num === 1) return 1;
+  return num * factorial(num);
+}
+function factorial(num) {
+  if (num === 1) console.log(1);
+  return num * factorial(num - 1);
+}
