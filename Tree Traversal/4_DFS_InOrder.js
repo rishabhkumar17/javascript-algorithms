@@ -17,3 +17,16 @@ Write a helper function which accepts a node
 Invoke the helper function with the current value
 Return the array of values
 */
+
+DFSInOrder() {
+    var data = [],
+        current = this.root;
+    function traverse(node) {
+        if(node.left) traverse(node.left);
+        data.push(node.value);
+        if(node.right) traverse(node.right);
+        
+    }
+    traverse(current);
+    return data;
+}
