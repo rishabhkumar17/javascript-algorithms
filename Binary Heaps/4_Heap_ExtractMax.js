@@ -12,3 +12,12 @@ Have the new root "sink down" to the correct spot..
     Keep looping and swapping until neither child is larger than the element.
     Return the old root.
 */
+
+extractMax() {
+    const max = this.values[0];
+    const end = this.values.pop();
+    this.values[0] = end;
+    // sink down
+    this.sinkDown();
+    return max;
+}
