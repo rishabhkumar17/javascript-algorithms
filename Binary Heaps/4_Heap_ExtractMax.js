@@ -18,6 +18,7 @@ extractMax() {
     const end = this.values.pop();
     if(this.values.length > 0) {
         this.values[0] = end;
+        // sink down
         this.sinkDown();
     }
     return max;
