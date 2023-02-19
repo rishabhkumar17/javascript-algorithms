@@ -111,4 +111,4 @@ ER.enqueue('High fever', 4);
 ER.enqueue('broken arm', 2);
 ER.enqueue('Glass in foot', 3);
 
-// O(n)
+// O(log(n))
