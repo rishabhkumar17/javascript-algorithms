@@ -53,6 +53,19 @@ class HashTable {
     }
     this.keyMap[index].push([key, value]);
   }
+
+  get(key) {
+    let index = this._hash(key);
+    let item = this.keyMap[index];
+    if (item) {
+      for (let i = 0; i < item.length; i++) {
+        if (item[i][0] === key) {
+          return item[i];
+        }
+      }
+    }
+    return undefined;
+  }
 }
 
 let ht = new HashTable(4);
@@ -60,3 +73,10 @@ ht.set('spanish movie', 'Life is Beautiful');
 ht.set('english movie', 'Interstellar');
 ht.set('indian movie', 'RRR');
 ht.set('japanese movie', 'Train to busan');
+ht.get('spanish movie');
+
+// let ht = new HashTable(4);
+// ht.set('spanish movie', 'Life is Beautiful');
+// ht.set('english movie', 'Interstellar');
+// ht.set('indian movie', 'RRR');
+// ht.set('japanese movie', 'Train to busan');
